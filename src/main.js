@@ -1,16 +1,19 @@
 const el = document.getElementById('countdown');
-let remaining = 3000;
+const duration = 3000;
+let start = null;
 
-function tick() {
-  remaining -= 135;
+function tick(timestamp) {
+  if (!start) start = timestamp;
+  const remaining = Math.max(0, duration - (timestamp - start));
+
+  el.textContent = (remaining / 1000).toFixed(2);
 
   if (remaining <= 0) {
     window.location.href = 'https://simonmerrick.com';
     return;
   }
 
-  el.textContent = (remaining / 1000).toFixed(2);
-  setTimeout(tick, 135);
+  requestAnimationFrame(tick);
 }
 
-setTimeout(tick, 135);
+requestAnimationFrame(tick);

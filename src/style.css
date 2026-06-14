@@ -1,3 +1,6 @@
+:root {
+  color-scheme: only light;
+}
 body {
   margin: 0;
   background: #000;
