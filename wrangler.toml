@@ -1,0 +1,5 @@
+name = "devtriplesecops-com"
+pages_build_output_dir = "src"
+
+[env.production]
+branch = "main"
