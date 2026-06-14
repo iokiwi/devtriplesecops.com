@@ -1,9 +1,32 @@
 :root {
-  color-scheme: only light;
+  color-scheme: light dark;
+  /* color-scheme: only light; */
+  /* color-scheme: only dark; */
+
+  --bg: #fff;
+  --text: #555;
+  --countdown: #111;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ccc;
+    --text: #000;
+    --countdown: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --text: #ccc;
+    --countdown: #fff;
+  }
 }
 
 body {
   margin: 0;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,13 +41,13 @@ img {
 }
 #redirect-text {
   margin-top: 24px;
-  color: #ccc;
+  color: var(--text);
   font-size: 18px;
   letter-spacing: 0.05em;
 }
 #countdown {
   display: inline-block;
-  color: #fff;
+  color: var(--countdown);
   font-weight: bold;
   font-size: 22px;
   min-width: 4ch;

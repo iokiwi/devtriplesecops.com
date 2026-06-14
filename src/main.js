@@ -1,5 +1,6 @@
 const el = document.getElementById('countdown');
 const duration = 3000;
+const testMode = window.location.hostname !== 'devtriplesecops.com';
 let start = null;
 
 function tick(timestamp) {
@@ -9,11 +10,10 @@ function tick(timestamp) {
   el.textContent = (remaining / 1000).toFixed(2);
 
   if (remaining <= 0) {
-    window.location.href = 'https://simonmerrick.com';
+    if (!testMode) window.location.href = 'https://simonmerrick.com';
     return;
   }
 
   requestAnimationFrame(tick);
 }
-
 requestAnimationFrame(tick);
