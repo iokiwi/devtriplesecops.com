@@ -52,3 +52,27 @@ img {
   font-size: 22px;
   min-width: 4ch;
 }
+
+#controls {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+#controls button,
+#controls a {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#controls button:hover,
+#controls a:hover {
+  color: var(--countdown);
+}
